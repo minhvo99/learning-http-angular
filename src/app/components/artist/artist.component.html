@@ -1,0 +1,23 @@
+ <!-- <pre>{{Artists | json}}</pre>  -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-4 mb-3" *ngFor="let item of Artists">
+			<div class="card-deck">
+				<div 	class="card" 
+						[routerLink]="['/artist', item.id]" 
+						routerLinkActive="Active"
+						(click)="getTopSong(item.id)">
+					<img class="card-img-top" height="338" width="338" 
+						*ngIf="item.images.length > 0"
+						[src]="item.images[0].url" alt=""
+						>
+					<div class="card-body">
+						<p class="card-title">Artist : {{item.name}}</p>
+						<p class="card-text">Type:{{item.genres}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<router-outlet></router-outlet>

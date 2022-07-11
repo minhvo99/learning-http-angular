@@ -1,0 +1,16 @@
+<div class="form-group w-100 form-inline">
+	<input 
+			class="form-control" 
+			type="text" 
+			placeholder="Enter a search query" 
+			#searchQuery 
+			id="seach">
+	<button class="btn btn-primary btn-large" 
+			routerLink="search" 
+			routerLinkActive="Active"
+			(click)="search(searchQuery.value)">
+			Search
+	</button>
+</div>
+	
+	<router-outlet></router-outlet>
